@@ -1,14 +1,16 @@
 import './App.css';
 // import Hello from './component/Hello';
-import Hello from './component/Hello3';
-import Welcome from './component/Welcome';
-import styles from "./App.module.css";
+// import Hello from './component/Hello3';
+// import Welcome from './component/Welcome';
+// import styles from "./App.module.css";
 
 import Header from './component/Header';
 import DayList from './component/DayList';
 import Day from './component/Day';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import EmptyPage from './component/EmptyPage';
+import CreateWord from './component/CreateWord';
+import CreateDay from './component/CreateDay';
 
 function App(){
   return (
@@ -18,6 +20,8 @@ function App(){
         <Routes>
           <Route path="/" exact element={<DayList />} />
           <Route path="/day/:day" exact element={<Day />} />
+          <Route path="/create_word" exact element={CreateWord}></Route>
+          <Route path="/create_day" exact element={CreateDay}></Route>
           <Route path="*" exact element={<EmptyPage />} /> 
         </Routes>
       </div>
