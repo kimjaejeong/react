@@ -4,16 +4,42 @@ import Hello from './component/Hello3';
 import Welcome from './component/Welcome';
 import styles from "./App.module.css";
 
-function App(){
-  return (<div className="App">
-    <h3>pros : properties</h3>
-    <Hello age={10}/>
-    <Hello age={20}/>
-    <Hello age={30}/>
+import Header from './component/Header';
+import DayList from './component/DayList';
+import Day from './component/Day';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import EmptyPage from './component/EmptyPage';
 
-  </div>
+function App(){
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" exact element={<DayList />} />
+          <Route path="/day/:day" exact element={<Day />} />
+          <Route path="*" exact element={<EmptyPage />} /> 
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
+
+
+ 
+
+
+
+// function App(){
+//   return (<div className="App">
+//     <h3>pros : properties</h3>
+//     <Hello age={10}/>
+//     <Hello age={20}/>
+//     <Hello age={30}/>
+
+//   </div>
+//   );
+// }
 
 
 
